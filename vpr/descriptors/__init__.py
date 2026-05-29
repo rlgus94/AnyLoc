@@ -1,1 +1,1 @@
-"""Helpers shared by the VLAD-codebook exporter (see ``vpr/export_codebook.py``)."""
+"""Helpers shared by the VLAD vocabulary exporter (see ``vpr/dino_vpr_export.py``)."""
