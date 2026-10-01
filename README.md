@@ -96,7 +96,7 @@
 > | --- | --- |
 > | [`vpr/`](./vpr/) | Slim master-codebook trainer. Loads PyTorch SuperPoint / XFeat / ALIKED at **native** image resolution (per-extractor `target_wh` override available), pools descriptors, fits k-means, writes `.bin`. Optional UMAP visualiser + ROS 2 bag → PNG extractor. |
 > | [`scripts/download_master_datasets.py`](./scripts/download_master_datasets.py) | Extract pre-staged OneDrive `.tar.gz` files into `datasets_vg/datasets/<name>/` with a printable copy-paste `vpr.export_codebook` command. |
-> | [`pyproject.toml`](./pyproject.toml) + `uv.lock` | uv-managed env (replaces the legacy `conda-environment.yml` workflow). On aarch64 / Jetson, `torch` + `torchvision` resolve to Jetson AI Lab CUDA wheels via `[tool.uv.sources]`. Conda files kept for upstream reference. |
+> | [`pyproject.toml`](./pyproject.toml) + `uv.lock` | uv-managed env (replaces the legacy `conda-environment.yml` workflow). `torch` 2.8.0 + `torchvision` 0.23.0 are pinned via `[tool.uv.sources]`: Jetson AI Lab cu126 wheels on aarch64 / Jetson, PyTorch cu128 wheels on x86_64. Conda files kept for upstream reference. |
 >
 > The corresponding C++ changes in DL-VINS — online warm-start refit, master
 > `.bin` loader, YAML/launch tunables — live in
